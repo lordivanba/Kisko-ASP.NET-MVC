@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form class="login_form">
+    <h1>Bienvenido</h1>
+    <div class="container_login">
+
+        <div class="input-container_login">
+            <i class="fas fa-envelope icon"></i>
+            <input type="text" placeholder="Correo Electronico">
+        </div>
+
+        <div class="input-container_login">
+            <i class="fas fa-key icon"></i>
+            <input type="password" placeholder="Contraseña">
+
+        </div>
+        <button class="button_login" id="btnLogin" type="submit"><a href="gestiones.html">Iniciar Sesión</a></button>
+        <p>¿No tienes cuenta? <a class="link" asp-controller="Register" asp-action="Index">¡Registrate aquí!</a></p>
+    </div>
+</form>

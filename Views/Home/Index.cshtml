@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container_utm">
+    <img id="imageutm" src="https://static.wixstatic.com/media/127857_888a4a11869f4d649cb12921f3fa8bfe~mv2.jpg/v1/fill/w_1903,h_634,al_c,q_85,usm_0.66_1.00_0.01/127857_888a4a11869f4d649cb12921f3fa8bfe~mv2.webp" alt="Snow" style="width:100%;">
+    <div class="centered">UNIVERSIDAD TECNOLÓGICA METROPOLITANA</div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h1>Misión</h1>
+        <p>Formar personas mediante el desarrollo de conocimientos y habilidades técnicas para potenciar su crecimiento y contribuir así, al progreso de toda la región sureste del país.</p>
+    </div>
+    <div class="column">
+        <h1>Visión</h1>
+        <p> Ser una universidad cuyos alumnos tengan garantía que sus habilidades estarán respaldadas mediante un documento que lo acredite.</p>
+    </div>
+    <div class="column">
+        <h1>Valores</h1>
+        <p>
+            <b>Innovación.</b> Extender las fronteras del conocimiento para resolver problemas del mundo real. <br>
+            <b>Espíritu de servicio y trabajo en equipo.</b> Integrar las habilidades individuales para lograr objetivos  compartidos en confianza mutua, mediante una actitud que genere valor hacia los demás. <br>
+            <b>Transparencia.</b> Garantizar el acceso a la información pública. <br>
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<h1 class="title_agregados">ÚLTIMOS PROYECTOS AGREGADOS</h1>
+<div class="container">
+    <div class="card">
+        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+        <h4>Proyecto A</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
+        <button id="btnProyectos" class="btn btn-dark">Ver mas</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+        <h4>Proyecto B</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
+        <button id="btnProyectos" class="btn btn-dark">Ver más</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+        <h4>Proyecto C</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
+        <button id="btnProyectos" class="btn btn-dark">Ver mas</button>
+    </div>
+</div>
+
+<hr>
+
+<h1 class="title_agregados">CARRERAS UTM</h1>
+<section class="container_carreras">
+    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+    <div class="carreras_text">
+        <h4>TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem eos impedit, voluptate reiciendis similique id molestias saepe deleniti ad! Fugiat commodi iusto et enim aspernatur ea rem fugit eum.</p>
+        <button id="btnCarreras" class="btn btn-dark">Ver más información de las carreras</button>
+    </div>
+</section>
+
+<hr>
+
+<h1 class="title_mapa">¿DÓNDE ESTAMOS UBICADOS?</h1>
+<section class="utm_map">
+    <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.322556465943!2d-89.617514184654!3d20.939557886046824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5672270a784baf%3A0x764b40010695f0d9!2sUniversidad%20Tecnol%C3%B3gica%20Metropolitana!5e0!3m2!1sen!2smx!4v1623952520789!5m2!1sen!2smx"></iframe>
+</section>
+
+<script type="text/javascript">
+    document.getElementById("btnCarreras").onclick = function () {
+        location.href = "divisiones.html";
+    };
+
+    document.getElementById("btnProyectos").onclick = function () {
+        location.href = "proyectos.html";
+    };
+</script>

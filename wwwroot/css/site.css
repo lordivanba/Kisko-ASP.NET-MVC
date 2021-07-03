@@ -1,0 +1,807 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f1f2f6;
+    background: #C04848; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #480048, #C04848); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #480048, #C04848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*Navegacion*/
+
+nav {
+    background: #232526; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: #f1f2f6;
+    font-size: 35px;
+    line-height: 80px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 100px;
+}
+
+.logo img {
+    width: 3rem;
+}
+
+nav ul {
+    float: right;
+    margin-right: 50px;
+}
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 8px;
+    }
+
+        nav ul li a {
+            color: #f1f2f6;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+            nav ul li a:hover {
+                color: #70a1ff;
+                transform: .3s;
+            }
+
+/* UTM */
+
+.containerutm {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#imageutm {
+    opacity: 0.5;
+}
+
+.centered {
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 500;
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    cursor: default;
+}
+
+/* UTM Info*/
+
+.row {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    margin-left: 1rem;
+    flex: 25%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Mapa */
+
+.title_mapa {
+    text-align: center;
+    font-size: 40px;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.utm_map {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-bottom: 0;
+}
+
+#maps {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40%;
+}
+
+/* Home agregados */
+
+.container {
+    width: 80rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding-left: 0rem;
+    border-radius: 3rem;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+    .container .card {
+        width: 330px;
+        height: auto;
+        border: none;
+        border-radius: 3rem;
+        box-shadow: 0 2px 2px;
+        overflow: hidden;
+        margin: 20px;
+        text-align: center;
+        transition: all 0.25s;
+        background: #A1FFCE; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+        .container .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 16px rgb(0, 0, 0.2);
+        }
+
+        .container .card img {
+            width: 330px;
+            height: 220px;
+        }
+
+        .container .card h4 {
+            font-size: 2rem;
+            font-weight: 750;
+            color: #192a56;
+        }
+
+        .container .card p {
+            text-align: justify;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1e272e;
+        }
+
+        .container .card button {
+            width: 7rem;
+            margin: auto;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+.title_agregados {
+    text-align: center;
+    font-size: 40px;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+
+/* Home carreras */
+
+.container_carreras {
+    margin: auto;
+    margin-bottom: 5rem;
+    width: 85rem;
+    height: 25rem;
+    padding: 8px;
+    border-radius: 3rem;
+    transition: all 0.25s;
+    background: #1D976C; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+    .container_carreras:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgb(0, 0, 0.2);
+    }
+
+
+    .container_carreras img {
+        border-radius: 4rem;
+        border: 2px solid #2f3542;
+        float: left;
+        width: 30rem;
+        height: auto;
+        padding: 0 0 0 0;
+        margin: 15px;
+    }
+
+    .container_carreras .carreras_text {
+        text-align: justify;
+    }
+
+        .container_carreras .carreras_text h4 {
+            text-align: left;
+            font-size: 3rem;
+            font-weight: 750;
+            margin: 2rem;
+        }
+
+        .container_carreras .carreras_text p {
+            text-align: justify;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+    .container_carreras button {
+        width: 15rem;
+        margin: auto;
+        margin-bottom: 1.2rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+/*Pagina divisiones*/
+
+.title_divisiones {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_divisiones {
+    width: 75rem;
+    margin: auto;
+}
+
+    .container_divisiones div {
+        margin-bottom: 2rem;
+        border-radius: 3rem;
+        background: #2f3542;
+    }
+
+        .container_divisiones div h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            padding-top: 1rem;
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        .container_divisiones div p {
+            font-size: 1.2rem;
+            padding: 1rem;
+        }
+
+        .container_divisiones div button {
+            font-size: 1.3rem;
+            border-radius: 1.5rem;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+/*Pagina Tecnologias*/
+
+.container_carreras_utm {
+    width: 70rem;
+    margin: auto;
+}
+
+    .container_carreras_utm div {
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+        .container_carreras_utm div h2 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .container_carreras_utm div p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .container_carreras_utm div button {
+            border-radius: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+
+.title_division {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/*Pagina proyectos*/
+
+.title_proyectos {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_proyecto {
+    margin: auto;
+    margin-bottom: 0;
+    width: 75rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 8px;
+    border-radius: 2rem;
+    background: #2f3542;
+}
+
+    .container_proyecto img {
+        border-radius: 1rem;
+        border: 2px solid #2f3542;
+        float: left;
+        width: 25rem;
+        height: auto;
+        padding: 0 0 0 0;
+        margin: 15px;
+    }
+
+    .container_proyecto .proyecto_text {
+        text-align: justify;
+    }
+
+        .container_proyecto .proyecto_text h4 {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2rem;
+        }
+
+    .container_proyecto .carreras_text p {
+        text-align: justify;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .container_proyecto .proyecto_text button {
+        font-size: 1.2rem;
+        font-weight: 600;
+        border-radius: 1.5rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+/*Gestion proyectos*/
+
+#alertmessage {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 30rem;
+    margin: auto;
+    text-align: center;
+}
+
+    #alertmessage svg {
+        width: 1rem;
+        height: auto;
+    }
+
+.proyecto_form label {
+    color: #f1f2f6;
+    font-size: 1rem;
+    margin: auto;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.container_gestion_proyecto {
+    width: 54rem;
+    height: auto;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.proyecto_form {
+    width: 35rem;
+    height: auto;
+    margin: auto;
+    border: none;
+    padding: 2rem;
+    border-radius: 2rem;
+    color: #2f3542;
+    display: block;
+    background: #2f3542;
+}
+
+    .proyecto_form input {
+        color: black;
+        border: none;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    .proyecto_form select {
+        color: black;
+        border: none;
+        margin: auto;
+        margin-bottom: 5px;
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+
+    .proyecto_form textarea {
+        color: black;
+        margin: auto;
+        margin-top: 5px;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        width: 25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+.title_gestion_proyectos {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+    .title_gestion_proyectos img {
+        width: 4rem;
+    }
+
+.proyecto_form button {
+    width: 50%;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    margin: 1rem auto auto auto;
+    font-weight: 500;
+    display: block;
+}
+
+.proyecto_table {
+    width: 50rem;
+    height: auto;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+    .proyecto_table thead {
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .proyecto_table tbody {
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .proyecto_table a {
+        width: 7rem;
+        margin: 0.2rem;
+        font-size: 1rem;
+        font-weight: 350;
+    }
+
+/* Login */
+
+.container_login {
+    width: 100%;
+    padding: 15px;
+}
+
+.login_form {
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+    .login_form h1 {
+        text-align: center;
+        color: #1a2537;
+        font-size: 40px;
+    }
+
+.container_login input[type="text"],
+.container_login input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-container_login {
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+.container_login i {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+.container_login .button_login {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .container_login .button_login a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .container_login .button_login:hover {
+        background: cadetblue;
+    }
+
+.container_login p {
+    color: black;
+    text-align: center;
+}
+
+.container_login .link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+    .container_login .link:hover {
+        color: cadetblue;
+    }
+
+@media(min-width:768px) {
+    .login_form {
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
+
+/*GESTIONES*/
+.title_gestiones {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_gestiones {
+    width: 110rem;
+    height: auto;
+    margin: auto;
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container_gestion {
+    padding: 2rem;
+    border-radius: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background: #2f3542;
+}
+
+    .container_gestion h5 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .container_gestion p {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+.container_gestiones img {
+    border-radius: 2rem;
+    width: 25rem;
+    height: auto;
+}
+
+.container_gestion button {
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+}
+
+/* */
+
+.title_info_proyecto {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_info_proyecto {
+    display: flex;
+    width: 65%;
+    margin: auto;
+}
+
+.container_info_img_proyecto img {
+    width: 30rem;
+    border-radius: 2rem;
+    padding-top: 1rem;
+}
+
+.container_info_img_proyecto {
+    flex: 2;
+    text-align: center;
+    font-size: 1rem;
+    background: #2f3542;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.container_info_txt_proyecto {
+    flex: 2;
+    background: #747d8c;
+    padding: 1.5rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+    .container_info_txt_proyecto h1 {
+        font-size: 2rem;
+    }
+
+    .container_info_txt_proyecto p {
+        font-size: 1.5rem;
+    }
+
+.container_video_proyecto {
+    width: 40%;
+    display: flex;
+    margin: auto;
+}
+
+    .container_video_proyecto iframe {
+        width: 100%;
+        height: 30rem;
+    }
+
+.container_galeria_proyecto {
+    width: 100rem;
+    margin: auto;
+    display: flex;
+}
+
+    .container_galeria_proyecto img {
+        width: 30rem;
+        border-radius: 1.5rem;
+        margin: 1rem;
+    }
+
+/*Acerca de*/
+
+.title_acerca_de {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_acerca_de_apartado {
+    width: 45rem;
+    height: auto;
+    background: #2f3542;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+    .container_acerca_de_apartado img {
+        width: 15rem;
+        margin-left: 15rem;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
+    .container_acerca_de_apartado h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .container_acerca_de_apartado p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+.title_integrantes {
+    text-align: center;
+    font-size: 3rem;
+    color: #f1f2f6;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.container_integrantes {
+    width: 55rem;
+    display: flex;
+    margin: auto;
+    margin-bottom: 1rem;
+    background: #2f3542;
+    border-radius: 2rem;
+}
+
+    .container_integrantes img {
+        width: 15rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+
+.container_integrantes_txt {
+    padding: 1rem;
+}
+
+    .container_integrantes_txt h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
