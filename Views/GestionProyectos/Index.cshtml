@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjectDTO>;
+@{
+    ViewData["Title"] = "GestionProyectos";
+}
+
+<h1 class="title_gestion_proyectos">
+    <img src="https://image.flaticon.com/icons/png/512/2683/2683274.png" alt="">
+    Gestion de proyectos
+</h1>
+
+<div class="container_buttons_proyects">
+    <a asp-action="Add" class="btn btn-success" id="btnAddProject">Añadir proyecto</a>
+</div>
+
+<section class="proyecto_table">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <td>Nombre del proyecto </td>
+                <td>Descripcion del proyecto </td>
+                <td>Grado y grupo </td>
+                <td>Operaciones </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.GradeGroup</td>
+                    <td>
+                        <a class="btn btn-primary" href="#">Editar</a>
+                        <a class="btn btn-danger" href="#">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

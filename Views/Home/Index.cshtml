@@ -34,21 +34,21 @@
         <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
         <h4>Proyecto A</h4>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
-        <button id="btnProyectos" class="btn btn-dark">Ver mas</button>
+        <a asp-controller="InfoProyecto" asp-action="Index" class="btn btn-dark">Ver más</a>
     </div>
 
     <div class="card">
         <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
         <h4>Proyecto B</h4>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
-        <button id="btnProyectos" class="btn btn-dark">Ver más</button>
+        <a asp-controller="InfoProyecto" asp-action="Index" class="btn btn-dark">Ver más</a>
     </div>
 
     <div class="card">
         <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
         <h4>Proyecto C</h4>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto atque id voluptatum sapiente minima dicta libero suscipit quam earum labore exercitationem, culpa cumque, voluptas ex? Quae obcaecati asperiores dolores quasi.</p>
-        <button id="btnProyectos" class="btn btn-dark">Ver mas</button>
+        <a asp-controller="InfoProyecto" asp-action="Index" class="btn btn-dark">Ver más</a>
     </div>
 </div>
 
@@ -60,7 +60,7 @@
     <div class="carreras_text">
         <h4>TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem eos impedit, voluptate reiciendis similique id molestias saepe deleniti ad! Fugiat commodi iusto et enim aspernatur ea rem fugit eum.</p>
-        <button id="btnCarreras" class="btn btn-dark">Ver más información de las carreras</button>
+        <a asp-controller="Divisiones" asp-action="Index" class="btn btn-dark">Ver divisiones disponibles</a>
     </div>
 </section>
 
@@ -70,13 +70,3 @@
 <section class="utm_map">
     <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.322556465943!2d-89.617514184654!3d20.939557886046824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5672270a784baf%3A0x764b40010695f0d9!2sUniversidad%20Tecnol%C3%B3gica%20Metropolitana!5e0!3m2!1sen!2smx!4v1623952520789!5m2!1sen!2smx"></iframe>
 </section>
-
-<script type="text/javascript">
-    document.getElementById("btnCarreras").onclick = function () {
-        location.href = "divisiones.html";
-    };
-
-    document.getElementById("btnProyectos").onclick = function () {
-        location.href = "proyectos.html";
-    };
-</script>
