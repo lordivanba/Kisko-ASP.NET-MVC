@@ -30,8 +30,8 @@
                     <td>@item.Description</td>
                     <td>@item.GradeGroup</td>
                     <td>
-                        <a class="btn btn-primary" href="#">Editar</a>
-                        <a class="btn btn-danger" href="#">Eliminar</a>
+                        <a class="btn btn-primary" asp-controller="GestionProyectos" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-danger" asp-controller="GestionProyectos" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
                     </td>
                 </tr>
             }

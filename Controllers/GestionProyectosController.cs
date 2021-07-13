@@ -51,5 +51,55 @@ namespace kisko.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int Id)
+        {
+            var projects = _dbContext.Projects
+                .Select(project => new ProjectDTO
+                {
+                    Id = project.Id,
+                    Name = project.Name,
+                    Description = project.Description,
+                    GradeGroup = project.GradeGroup,
+                    Img = project.Img
+                }).ToList();
+            var proj = projects.Where(s => s.Id == Id).FirstOrDefault();
+            return View(proj);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Project proj)
+        {
+            var projects = _dbContext.Projects
+                .Select(project => new ProjectDTO
+                {
+                    Id = project.Id,
+                    Name = project.Name,
+                    Description = project.Description,
+                    GradeGroup = project.GradeGroup,
+                    Img = project.Img
+                }).ToList();
+            var project = projects.Where(s => s.Id == proj.Id).FirstOrDefault();
+            projects.Remove(project);
+            projects.Add(project);
+
+            _dbContext.Projects.Update(proj);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int Id)
+        {
+            var project = new Project()
+            {
+                Id = Id
+            };
+
+            _dbContext.Projects.Attach(project);
+            _dbContext.Projects.Remove(project);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

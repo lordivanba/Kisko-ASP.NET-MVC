@@ -1,0 +1,42 @@
+﻿@model kisko.Models.ProjectDTO;
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="title_gestion_proyectos">
+    <img src="https://image.flaticon.com/icons/png/512/2683/2683274.png" alt="">
+    Gestion de proyectos
+</h1>
+
+<section class="container_gestion_proyecto">
+    <div>
+        <form class="proyecto_form" asp-action="Edit" method="POST">
+
+            <div class="form-group">
+                <label for="name">Nombre del proyecto</label>
+                <input class="form-control" type="text" name="name" id="name" asp-for="Name" maxlength="100" required value="@Model.Name">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripcion del proyecto</label>
+                <textarea class="form-control" name="description" id="description" asp-for="Description" cols="30" rows="10" maxlength="250">@Model.Description</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="gradegroup">Grado y Grupo</label>
+                <input class="form-control" type="text" name="gradegroup" id="gradegroup" asp-for="GradeGroup" value="@Model.GradeGroup">
+            </div>
+
+            <div class="form-group">
+                <label for="img">Imagen</label>
+                <input class="form-control" type="file" name="img" id="img" asp-for="Img">
+            </div>
+
+            <button type="submit" class="btn btn-success">Actualizar</button>
+        </form>
+    </div>
+</section>
+
+    
+
+
