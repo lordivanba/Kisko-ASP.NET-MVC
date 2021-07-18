@@ -1,0 +1,28 @@
+﻿@model kisko.Models.ProjectDTO;
+@{
+    ViewData["Title"] = "Info";
+}
+
+<h1 class="title_info_proyecto">Más información del proyecto</h1>
+<section class="container_info_proyecto">
+    <div class="container_info_img_proyecto">
+        <img src="~/images/@Model.Img" alt="">
+        <h2>@Model.Name</h2>
+        <h4>DSM</h4>
+    </div>
+    <div class="container_info_txt_proyecto">
+        <h1>Información detallada del proyecto</h1>
+        <p>@Model.Description</p>
+    </div>
+</section>
+<h1 class="title_info_proyecto">Video del proyecto</h1>
+<section class="container_video_proyecto">
+    <iframe width="420" height="345" src="@Model.Video">
+    </iframe>
+</section>
+<h1 class="title_info_proyecto">Galería del proyecto</h1>
+<section class="container_galeria_proyecto">
+    <div class="container_galeria_img"><img src="~/images/@Model.Img" alt="@Model.Name"></div>
+    <div class="container_galeria_img"><img src="~/images/@Model.Img2" alt="@Model.Name"></div>
+    <div class="container_galeria_img"><img src="~/images/@Model.Img3" alt="@Model.Name"></div>
+</section>

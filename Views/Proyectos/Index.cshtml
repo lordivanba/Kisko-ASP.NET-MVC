@@ -1,36 +1,19 @@
-﻿@{
+﻿@model IEnumerable<ProjectDTO>
+@{
     ViewData["Title"] = "Proyectos";
 }
 
 <section class="container_proyectos">
     <h1 class="title_proyectos">Proyectos</h1>
-    <div class="container_proyecto">
-        <img src="https://images.pexels.com/photos/6953672/pexels-photo-6953672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-        <div class="proyecto_text">
-            <h4>PROYECTO A</h4>
-            <h5></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem eos impedit, voluptate reiciendis similique id molestias saepe deleniti ad! Fugiat commodi iusto et enim aspernatur ea rem fugit eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae sed incidunt maiores commodi, dicta cupiditate sapiente voluptate magni veritatis, deleniti necessitatibus reprehenderit odio. Modi quod veniam minima! Dolores, porro itaque?</p>
-            <a id="btnCarreras" class="btn btn-primary" asp-controller="InfoProyecto" asp-action="Index">Ver más información del proyecto</a>
-        </div>
-    </div>
 
-    <div class="container_proyecto">
-        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-        <div class="proyecto_text">
-            <h4>PROYECTO B</h4>
-            <h5></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem eos impedit, voluptate reiciendis similique id molestias saepe deleniti ad! Fugiat commodi iusto et enim aspernatur ea rem fugit eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae sed incidunt maiores commodi, dicta cupiditate sapiente voluptate magni veritatis, deleniti necessitatibus reprehenderit odio. Modi quod veniam minima! Dolores, porro itaque?</p>
-            <a id="btnCarreras" class="btn btn-primary" asp-controller="InfoProyecto" asp-action="Index">Ver más información del proyecto</a>
+    @foreach (var item in Model)
+    {
+        <div class="container_proyecto">
+            <div class="proyecto_text">
+                <h4>@item.Name</h4>
+                <p>@item.Description</p>
+                <a id="btnCarreras" class="btn btn-primary"asp-controller="Proyectos" asp-action="Info" asp-route-id="@item.Id">Ver más información del proyecto</a>
+            </div>
         </div>
-    </div>
-
-    <div class="container_proyecto">
-        <img src="https://images.pexels.com/photos/7376/startup-photos.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-        <div class="proyecto_text">
-            <h4>PROYECTO C</h4>
-            <h5></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem eos impedit, voluptate reiciendis similique id molestias saepe deleniti ad! Fugiat commodi iusto et enim aspernatur ea rem fugit eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae sed incidunt maiores commodi, dicta cupiditate sapiente voluptate magni veritatis, deleniti necessitatibus reprehenderit odio. Modi quod veniam minima! Dolores, porro itaque?</p>
-            <a id="btnCarreras" class="btn btn-primary" asp-controller="InfoProyecto" asp-action="Index">Ver más información del proyecto</a>
-        </div>
-    </div>
+    }
 </section>

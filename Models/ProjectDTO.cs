@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace kisko.Models
 {
@@ -13,5 +14,13 @@ namespace kisko.Models
         public string GradeGroup { get; set; }
 
         public string Img { get; set; }
+        public IFormFile Photo { get; set; }
+        public string Img2 { get; set; }
+        public IFormFile Photo2 { get; set; }
+        public string Img3 { get; set; }
+        public IFormFile Photo3 { get; set; }
+
+        public string Video { get; set; }
+
     }
 }

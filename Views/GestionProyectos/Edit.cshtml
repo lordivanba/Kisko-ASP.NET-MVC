@@ -1,16 +1,18 @@
 ﻿@model kisko.Models.ProjectDTO;
 @{
     ViewData["Title"] = "Edit";
+    var photoPath = $"~/images/{(Model.Img ?? "not-found.png")}";
+    var photoPath2 = $"~/images/{(Model.Img2 ?? "not-found.png")}";
+    var photoPath3 = $"~/images/{(Model.Img3 ?? "not-found.png")}";
 }
 
 <h1 class="title_gestion_proyectos">
     <img src="https://image.flaticon.com/icons/png/512/2683/2683274.png" alt="">
     Gestion de proyectos
 </h1>
-
 <section class="container_gestion_proyecto">
     <div>
-        <form class="proyecto_form" asp-action="Edit" method="POST">
+        <form class="proyecto_form" asp-action="Edit" method="POST" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="name">Nombre del proyecto</label>
@@ -28,8 +30,43 @@
             </div>
 
             <div class="form-group">
-                <label for="img">Imagen</label>
-                <input class="form-control" type="file" name="img" id="img" asp-for="Img">
+                <label for="video">Link del video</label>
+                <input class="form-control" type="text" name="video" id="video" asp-for="Video" value="@Model.Video">
+            </div>
+
+            <div class="container_edit_project_img">
+                <div class="form-group">
+                    <img src="@photoPath" alt="@Model.Name" class="img-fluid photoProject" asp-append-version="true"
+                         id="Img" name="Img" />
+                </div>
+
+                <div class="form-group">
+                    <img src="@photoPath2" alt="@Model.Name" class="img-fluid photoProject" asp-append-version="true"
+                         id="Img2" name="Img2" />
+                </div>
+
+                <div class="form-group">
+                    <img src="@photoPath3" alt="@Model.Name" class="img-fluid photoProject" asp-append-version="true"
+                         id="Img3" name="Img3" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Photo" class="form-label">Imagen</label>
+                <input class="form-control" type="file" asp-for="Photo" value="@Model.Img">
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Photo2" class="form-label">Imagen 2</label>
+                <input class="form-control" type="file" asp-for="Photo2" value="@Model.Img2">
+                <span asp-validation-for="Photo2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Photo3" class="form-label">Imagen 3</label>
+                <input class="form-control" type="file" asp-for="Photo3" value="@Model.Img3">
+                <span asp-validation-for="Photo3" class="text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-success">Actualizar</button>

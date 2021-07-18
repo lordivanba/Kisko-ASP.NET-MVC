@@ -348,7 +348,7 @@ nav ul li a:hover{
 
 .title_proyectos{
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     color: #f1f2f6;
     margin: auto;
     margin-top: 50px;
@@ -359,7 +359,7 @@ nav ul li a:hover{
 .container_proyecto{
     margin: auto;
     margin-bottom: 0;
-    width: 75rem;
+    width: 40rem;
     margin: auto;
     margin-bottom: 2rem;
     padding: 8px;
@@ -372,7 +372,7 @@ nav ul li a:hover{
     border-radius: 1rem;
     border: 2px solid #2f3542;
     float: left;
-    width: 25rem;
+    width: 15rem;
     height: auto;
     padding: 0 0 0 0;
     margin: 15px;
@@ -384,19 +384,19 @@ nav ul li a:hover{
 
 .container_proyecto .proyecto_text h4{
     text-align: left;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
     margin: 2rem;
 }
 
 .container_proyecto .carreras_text p{
     text-align: justify;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
 .container_proyecto .proyecto_text a{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 1.5rem;
     margin: auto;
@@ -505,7 +505,7 @@ nav ul li a:hover{
 }
 
 .proyecto_table{
-    width: 50rem;
+    width: 75rem;
     height: auto;
     margin: auto;
     margin-top: 1rem;
@@ -657,8 +657,8 @@ nav ul li a:hover{
 
 .container_gestiones img{
     border-radius: 2rem;
-    width: 25rem;
-    height: auto;
+    width: 15rem;
+    height: 15rem;
 }
 
 .container_gestion a{
@@ -812,3 +812,23 @@ nav ul li a:hover{
     text-align: center;
     margin-bottom: 1rem;
 }
+
+.photoProject{
+    padding: 0,5rem;
+    width: 256px;
+    height: 256px;
+}
+
+.container_edit_project_img {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_edit_project_img img{
+    width: 25rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+

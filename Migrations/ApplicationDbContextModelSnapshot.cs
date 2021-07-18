@@ -34,7 +34,16 @@ namespace kisko.Migrations
                     b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Img2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Img3")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Video")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
