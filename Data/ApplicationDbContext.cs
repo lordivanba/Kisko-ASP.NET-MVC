@@ -17,6 +17,7 @@ namespace kisko.Data
 
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-
+        public virtual DbSet<Career> Careers { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }

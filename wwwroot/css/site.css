@@ -327,7 +327,7 @@ nav ul li a:hover{
     font-weight: 500;
 }
 
-.container_carreras_utm div button{
+.container_carreras_utm div a{
     border-radius: 1.5rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -529,6 +529,13 @@ nav ul li a:hover{
     font-size: 1rem;
     font-weight: 350;
 }
+
+#btnDownloadPdf {
+    font-size: 0.9rem;
+    width: 9rem;
+    height: 2.3rem;
+}
+
 
 .container_buttons_proyects{
     margin: 0;

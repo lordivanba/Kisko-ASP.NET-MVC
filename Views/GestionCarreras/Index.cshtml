@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CareerDTO>;
 @{
     ViewData["Title"] = "GestionCarreras";
 }
@@ -7,66 +7,35 @@
     <img src="https://image.flaticon.com/icons/png/512/2231/2231696.png" alt="">
     Gestion de carreras
 </h1>
-<section class="container_gestion_proyecto">
-    <div>
-        <form class="proyecto_form" action="/add_project" method="POST">
 
-            <div class="form-group">
-                <label for="name">Nombre de la carrera</label>
-                <input class="form-control" type="text" name="name" id="name" maxlength="100" required>
-            </div>
-
-            <div class="form-group">
-                <label for="division">Division</label>
-                <select class="form-select" name="division">
-                    <option selected>Selecionar división</option>
-                    <option value="1">Tecnologías de la Información y Comunicación</option>
-                    <option value="2">Industrial</option>
-                    <option value="3">Administración</option>
-                    <option value="4">Innovación y Desarrollo Estratégico</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="description">Descripcion de la carrera</label>
-                <textarea class="form-control" name="description" id="description" cols="30" rows="10" maxlength="250" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-success">Guardar</button>
-        </form>
-    </div>
-</section>
+<div class="container_buttons_proyects">
+    <a asp-controller="GestionCarreras" asp-action="Add" class="btn btn-success" id="btnAddProject">Añadir carrera</a>
+</div>
 
 <section class="proyecto_table">
     <table class="table table-dark">
         <thead>
             <tr>
                 <td>Nombre de la carrera </td>
-                <td>División</td>
-                <td>Descripcion de la carrera</td>
+                <td>Descripcion </td>
+                <td>División </td>
                 <td>Operaciones </td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>T.S.U Desarrollo de Software Multiplataforma</td>
-                <td>Tecnologías de la Información y Comunicación</td>
-                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero aspernatur perferendis minima sit recusandae explicabo unde saepe laboriosam, quod ab. Consequuntur porro ipsum exercitationem atque quia quis blanditiis harum cum.</td>
-                <td>
-                    <a class="btn btn-primary" href="">Editar</a>
-                    <a class="btn btn-danger" href="">Eliminar</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>T.S.U. Área Solar</td>
-                <td>Industrial</td>
-                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero aspernatur perferendis minima sit recusandae explicabo unde saepe laboriosam, quod ab. Consequuntur porro ipsum exercitationem atque quia quis blanditiis harum cum.</td>
-                <td>
-                    <a class="btn btn-primary" href="">Editar</a>
-                    <a class="btn btn-danger" href="">Eliminar</a>
-                </td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Division</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="GestionCarreras" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-danger" asp-controller="GestionCarreras" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
+                        <a id="btnDownloadPdf" class="btn btn-light" href="~/archives/@item.PdfName" target="_blank">Plan de estudio</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </section>

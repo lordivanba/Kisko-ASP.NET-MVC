@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CareerDTO>
 @{
     ViewData["Title"] = "DivisionTic";
 }
@@ -6,40 +6,13 @@
 <section class="container_carreras_utm">
     <h1 class="title_division">DIVISIÓN TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN</h1>
     <hr>
-    <div class="container_carrera">
-        <h2>T.S.U. en Infraestructura de Redes Digitales.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
-    <div class="container_carrera">
-        <h2>Ingeniería en Redes Inteligentes y Ciberseguridad.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
-    <div class="container_carrera">
-        <h2>T.S.U. en Desarrollo de Software Multiplataforma</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
-    <div class="container_carrera">
-        <h2>Ingeniería en Desarrollo y Gestión de Software</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
-    <div class="container_carrera">
-        <h2>T.S.U. en Entornos Virtuales y Negocios Digitales.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
-    <div class="container_carrera">
-        <h2>Ingeniería en Entornos Virtuales Y Negocios Digitales</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non ducimus magnam doloremque vel, sit quos molestias similique amet ab autem, perspiciatis provident itaque veritatis aut sed necessitatibus! Dolore, iste.</p>
-        <button class="btn btn-primary">Plan de estudio</button>
-        <hr>
-    </div>
+    @foreach (var item in Model)
+    {
+        <div class="container_carrera">
+            <h2>@item.Name</h2>
+            <p>@item.Description</p>
+            <a href="~/archives/@item.PdfName" class="btn btn-primary" target="_blank">Plan de estudio</a>
+            <hr>
+        </div>
+    }
 </section>

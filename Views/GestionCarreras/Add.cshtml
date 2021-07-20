@@ -1,0 +1,34 @@
+﻿@model kisko.Models.CareerDTO;
+@{
+    ViewData["Title"] = "Add";
+}
+
+<section class="container_gestion_proyecto">
+    <div>
+        <form class="proyecto_form" asp-action="Add" method="POST">
+
+            <div class="form-group">
+                <label for="name">Nombre de la carrera</label>
+                <input class="form-control" type="text" name="name" id="name" maxlength="100" required asp-for="Name">
+            </div>
+
+            <div class="form-group">
+                <label for="division">Division</label>
+                <select class="form-select" name="division" asp-for="Division">
+                    <option selected></option>
+                    <option value="Tecnologías de la Información y Comunicación">Tecnologías de la Información y Comunicación</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Administración">Administración</option>
+                    <option value="Innovación y Desarrollo Estratégico">Innovación y Desarrollo Estratégico</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripcion de la carrera</label>
+                <textarea class="form-control" name="description" id="description" cols="30" rows="10" maxlength="250" required asp-for="Description"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </form>
+    </div>
+</section>
