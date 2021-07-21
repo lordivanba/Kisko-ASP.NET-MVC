@@ -1,4 +1,5 @@
-﻿using kisko.Models;
+﻿using kisko.Data;
+using kisko.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,16 +12,28 @@ namespace kisko.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _dbContext;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext dbContext)
         {
             _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var projects = _dbContext.Projects.OrderByDescending(p => p.Id)
+                .Select(project => new ProjectDTO
+                {
+                    Id = project.Id,
+                    Name = project.Name,
+                    Description = project.Description,
+                    GradeGroup = project.GradeGroup,
+                    Img = project.Img,
+                    Video = project.Video
+                }).Take(3).ToList();
+            return View(projects);
         }
 
         public IActionResult Proyectos()
