@@ -40,6 +40,7 @@
                 <td>
                     <a class="btn btn-primary" asp-controller="GestionProyectos" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                     <a class="btn btn-danger" asp-controller="GestionProyectos" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
+                    <a class="btn btn-secondary" asp-controller="Proyectos" asp-action="Info" asp-route-id="@item.Id">Detalles</a>
                 </td>
             </tr>
             }

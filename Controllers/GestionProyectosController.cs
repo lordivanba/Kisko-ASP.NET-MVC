@@ -34,7 +34,7 @@ namespace kisko.Controllers
                     Description = project.Description,
                     GradeGroup = project.GradeGroup,
                     Student = project.Student == null ? "N/A" : project.Student,
-                    SecondStudent = project.SecondStudent == null ? "N/A" : project.Student
+                    SecondStudent = project.SecondStudent == null ? "N/A" : project.SecondStudent
 
                 }).ToList();
             return View(projects);
@@ -67,7 +67,6 @@ namespace kisko.Controllers
             }).ToList();
             var stud = students.Where(s => s.Id == dto.StudentId).FirstOrDefault();
             var stud2 = students.Where(s => s.Id == dto.SecondStudentId).FirstOrDefault();
-
             var project = new Project
             {
                 Name = dto.Name,

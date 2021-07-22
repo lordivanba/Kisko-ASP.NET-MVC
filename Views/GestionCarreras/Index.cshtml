@@ -36,7 +36,7 @@
                     <td>
                         <a class="btn btn-primary" asp-controller="GestionCarreras" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                         <a class="btn btn-danger" asp-controller="GestionCarreras" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
-                        <a id="btnDownloadPdf" class="btn btn-light" href="~/archives/@item.PdfName" target="_blank">Plan de estudio</a>
+                        <a id="btnDownloadPdf" class="btn btn-secondary" href="~/archives/@item.PdfName" target="_blank">Plan de estudio</a>
                     </td>
                 </tr>
             }
