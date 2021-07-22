@@ -57,6 +57,20 @@ namespace kisko.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Delete(int Id)
+        {
+            var career = new Career()
+            {
+                Id = Id
+            };
+
+            _dbContext.Careers.Attach(career);
+            _dbContext.Careers.Remove(career);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Edit(int Id)
         {
             var careers = _dbContext.Careers
@@ -109,5 +123,7 @@ namespace kisko.Controllers
 
             return RedirectToAction("Index");
         }
+
+
     }
 }

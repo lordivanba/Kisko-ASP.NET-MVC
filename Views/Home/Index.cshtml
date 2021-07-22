@@ -34,7 +34,7 @@
     @foreach (var item in Model)
     {
         <div class="card">
-            <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+            <img src="~/images/@item.Img" alt="@item.Photo">
             <h4>@item.Name</h4>
             <p>@item.Description</p>
             <a asp-controller="Proyectos" asp-action="Info" asp-route-id="@item.Id" class="btn btn-dark">Ver más</a>

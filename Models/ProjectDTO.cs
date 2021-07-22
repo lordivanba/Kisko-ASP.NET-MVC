@@ -19,6 +19,10 @@ namespace kisko.Models
         public string Img3 { get; set; }
         public IFormFile Photo3 { get; set; }
         public string Video { get; set; }
+        public int? StudentId { get; set; }
+        public string Student { get; set; }
+        public int? SecondStudentId { get; set; }
+        public string SecondStudent { get; set; }
 
     }
 }

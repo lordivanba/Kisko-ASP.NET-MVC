@@ -30,7 +30,6 @@ namespace kisko.Controllers
                     Description = project.Description,
                     GradeGroup = project.GradeGroup,
                     Img = project.Img,
-                    Video = project.Video
                 }).ToList();
             return View(projects);
         }
@@ -47,7 +46,9 @@ namespace kisko.Controllers
                     Img = project.Img,
                     Img2 = project.Img2,
                     Img3 = project.Img3,
-                    Video = project.Video
+                    Video = project.Video,
+                    Student = project.Student,
+                    SecondStudent = project.SecondStudent
                 }).ToList();
             var proj = projects.Where(s => s.Id == Id).FirstOrDefault();
             return View(proj);

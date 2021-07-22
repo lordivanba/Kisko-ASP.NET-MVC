@@ -26,6 +26,31 @@
             </div>
 
             <div class="form-group">
+                <label for="Student">Integrante #1</label>
+
+                <select class="form-select" name="StudentId" asp-for="StudentId" title="Selecciona el integrante">
+                    <option value="">Selecciona un alumno</option>
+                    @foreach (var item in ViewBag.Students)
+                    {
+                        <option value="@item.Id">@item.Name @item.Lastname</option>
+
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="SecondStudentId">Integrante #2</label>
+
+                <select class="form-select" name="SecondStudentId" asp-for="SecondStudentId" title="Selecciona el integrante">
+                    <option value="">Selecciona un alumno</option>
+                    @foreach (var item in ViewBag.Students)
+                    {
+                        <option value="@item.Id">@item.Name @item.Lastname</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="video">Link del video</label>
                 <input class="form-control" type="text" name="video" id="video" asp-for="Video" value="@Model.Video">
             </div>

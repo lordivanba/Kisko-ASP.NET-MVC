@@ -6,11 +6,17 @@
 <h1 class="title_info_proyecto">@Model.Name</h1>
 <section class="container_info_proyecto">
     <div class="container_info_img_proyecto">
-        <img src="~/images/@Model.Img" alt="">
+        <img src="~/images/@Model.Img" alt=""/>
     </div>
     <div class="container_info_txt_proyecto">
         <h1>Información detallada del proyecto</h1>
         <p>@Model.Description</p>
+        <hr />
+        <h1>Integrantes</h1>
+        <ul>
+            <li>@Model.Student</li>
+            <li>@Model.SecondStudent</li>
+        </ul>
     </div>
 </section>
 <h1 class="title_info_proyecto">Video del proyecto</h1>

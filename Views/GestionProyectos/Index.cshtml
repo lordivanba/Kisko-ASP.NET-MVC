@@ -9,6 +9,10 @@
 </h1>
 
 <div class="container_buttons_proyects">
+    <a asp-controller="Gestiones" asp-action="Index" class="btn btn-primary" id="btnAddProject">Regresar a las gestiones</a>
+</div>
+
+<div class="container_buttons_proyects">
     <a asp-action="Add" class="btn btn-success" id="btnAddProject">Añadir proyecto</a>
 </div>
 
@@ -19,23 +23,25 @@
                 <td>Nombre del proyecto </td>
                 <td>Descripcion del proyecto </td>
                 <td>Grado y grupo </td>
-                <td>Video link </td>
+                <td>Integrante #1 </td>
+                <td>Integrante #2 </td>
                 <td>Operaciones </td>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
-                    <td>@item.GradeGroup</td>
-                    <td>@item.Video</td>
-                    <td>
-                        <a class="btn btn-primary" asp-controller="GestionProyectos" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                        <a class="btn btn-danger" asp-controller="GestionProyectos" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.GradeGroup</td>
+                <td>@item.Student</td>
+                <td>@item.SecondStudent</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="GestionProyectos" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-controller="GestionProyectos" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

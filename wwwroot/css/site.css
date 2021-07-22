@@ -561,12 +561,22 @@ nav ul li a:hover{
 
 #btnAddProject {
     font-size: 1.2rem;
-    margin-left: 74.5rem;
+    margin-left: 82rem;
+    margin-top: 0.3rem;
 }
 
-/* Login */
+.btnAddAlumnoProject{
+    width: 100%;
+}
 
-.container_login{
+.container_gestion_proyecto a{
+    width: 40%;
+    border-radius: 2rem;
+    margin-top: 1rem;   
+    margin-left: 9rem;
+}
+/* Login */
+.container_login {
     width: 100%;
     padding: 15px;
 }
@@ -736,6 +746,7 @@ nav ul li a:hover{
 
 .container_info_txt_proyecto h1{
     font-size: 2rem;
+    margin-top:1rem;
 }
 
 .container_info_txt_proyecto p{
@@ -802,6 +813,17 @@ nav ul li a:hover{
     font-size: 1.5rem;
     text-align: center;
 }
+
+.container_acerca_de_apartado a{
+    display:flex;
+    width: 20rem;
+    margin:auto;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+}
+
 
 .title_integrantes{
     text-align: center;

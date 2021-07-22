@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<StudentDTO>;
 @{
     ViewData["Title"] = "GestionAlumnos";
 }
@@ -9,21 +9,36 @@
 </h1>
 
 <div class="container_buttons_proyects">
-    <a asp-action="Add" class="btn btn-success" id="btnAddProject">Añadir proyecto</a>
+    <a asp-controller="Gestiones" asp-action="Index" class="btn btn-primary" id="btnAddProject">Regresar a las gestiones</a>
+</div>
+
+<div class="container_buttons_proyects">
+    <a asp-action="Add" class="btn btn-success" id="btnAddProject">Añadir alumno</a>
 </div>
 
 <section class="proyecto_table">
     <table class="table table-dark">
         <thead>
             <tr>
-                <td>Nombre del proyecto </td>
-                <td>Descripcion del proyecto </td>
-                <td>Grado y grupo </td>
+                <td>Nombre </td>
+                <td>Apellido </td>
+                <td>Correo </td>
                 <td>Operaciones </td>
             </tr>
         </thead>
         <tbody>
-            <h2>Hola alumnos :p</h2>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Lastname</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="GestionAlumnos" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-danger" asp-controller="GestionAlumnos" asp-action="Delete" asp-route-id="@item.Id" onClick="confirm('¿Seguro de eliminar este registro?')">Eliminar</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </section>

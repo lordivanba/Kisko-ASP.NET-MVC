@@ -20,5 +20,9 @@ namespace kisko.Entities
         public string Img2 { get; set; }
         public string Img3 { get; set; }
         public string Video { get; set; }
+        public int? StudentId { get; set; }
+        public string Student { get; set; }
+        public int? SecondStudentId { get; set; }
+        public string SecondStudent { get; set; }
     }
 }
