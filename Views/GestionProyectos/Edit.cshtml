@@ -1,6 +1,7 @@
 ﻿@model kisko.Models.ProjectDTO;
 @{
     ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
     var photoPath = $"~/images/{(Model.Img ?? "not-found.png")}";
     var photoPath2 = $"~/images/{(Model.Img2 ?? "not-found.png")}";
     var photoPath3 = $"~/images/{(Model.Img3 ?? "not-found.png")}";

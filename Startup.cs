@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using kisko.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace kisko
 {
@@ -48,6 +48,9 @@ namespace kisko
 
             app.UseRouting();
 
+            //Who are you?
+            app.UseAuthentication();
+            //Are you allowewd?
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

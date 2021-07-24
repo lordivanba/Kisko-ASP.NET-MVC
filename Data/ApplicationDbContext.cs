@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using kisko.Entities;
 
+
 namespace kisko.Data
 {
     public class ApplicationDbContext : DbContext

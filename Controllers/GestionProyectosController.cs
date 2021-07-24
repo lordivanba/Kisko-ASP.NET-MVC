@@ -18,14 +18,18 @@ namespace kisko.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IWebHostEnvironment _hosting;
+        public int Id = 0;
         public GestionProyectosController(ApplicationDbContext dbContext, IWebHostEnvironment hostEnviroment)
         {
             _dbContext = dbContext;
             _hosting = hostEnviroment;
         }
-        public IActionResult Index()
+        public IActionResult Index(int Id)
         {
-
+            if(Id == 0)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var projects = _dbContext.Projects
                 .Select(project => new ProjectDTO
                 {
@@ -37,11 +41,13 @@ namespace kisko.Controllers
                     SecondStudent = project.SecondStudent == null ? "N/A" : project.SecondStudent
 
                 }).ToList();
+            ViewBag.AdminId = Id;
             return View(projects);
         }
 
         public IActionResult Add()
         {
+
             var students = _dbContext.Students.Select(s => new StudentDTO
             {
                 Id = s.Id,
@@ -50,6 +56,7 @@ namespace kisko.Controllers
             });
 
             ViewBag.Students = students;
+
             return View();
         }
 
@@ -82,7 +89,7 @@ namespace kisko.Controllers
 
             _dbContext.Projects.Add(project);
             _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Edit(int Id)
@@ -156,7 +163,7 @@ namespace kisko.Controllers
             _dbContext.Projects.Update(project);
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Delete(int Id)
@@ -170,7 +177,7 @@ namespace kisko.Controllers
             _dbContext.Projects.Remove(project);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         private async Task<Project> GetProjectById(int id)

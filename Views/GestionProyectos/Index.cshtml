@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<ProjectDTO>;
 @{
     ViewData["Title"] = "GestionProyectos";
+    Layout = "_AdminLayout";
+    int Id = (int)ViewBag.AdminId;
 }
 
 <h1 class="title_gestion_proyectos">
@@ -9,7 +11,7 @@
 </h1>
 
 <div class="container_buttons_proyects">
-    <a asp-controller="Gestiones" asp-action="Index" class="btn btn-primary" id="btnAddProject">Regresar a las gestiones</a>
+    <a asp-controller="Gestiones" asp-action="Index" asp-route-id="@Id" class="btn btn-primary" id="btnAddProject">Regresar a las gestiones</a>
 </div>
 
 <div class="container_buttons_proyects">

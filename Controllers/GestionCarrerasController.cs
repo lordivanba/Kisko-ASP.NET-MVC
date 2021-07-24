@@ -17,13 +17,18 @@ namespace kisko.Controllers
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IWebHostEnvironment _hosting;
+        public int Id = 0;
         public GestionCarrerasController(ApplicationDbContext dbContext, IWebHostEnvironment hostEnviroment)
         {
             _dbContext = dbContext;
             _hosting = hostEnviroment;
         }
-        public IActionResult Index()
+        public IActionResult Index(int Id)
         {
+            if (Id == 0)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var careers = _dbContext.Careers
                 .Select(career => new CareerDTO
                 {
@@ -33,6 +38,7 @@ namespace kisko.Controllers
                     Division = career.Division,
                     PdfName = career.PdfName
                 }).ToList();
+            ViewBag.AdminId = Id;
             return View(careers);
         }
 
@@ -54,7 +60,7 @@ namespace kisko.Controllers
 
             _dbContext.Careers.Add(career);
             _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Delete(int Id)
@@ -68,7 +74,7 @@ namespace kisko.Controllers
             _dbContext.Careers.Remove(career);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Edit(int Id)
@@ -121,7 +127,7 @@ namespace kisko.Controllers
             _dbContext.Careers.Update(career);
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
 

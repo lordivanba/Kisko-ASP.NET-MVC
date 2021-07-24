@@ -98,13 +98,7 @@ namespace kisko.Migrations
                     b.Property<string>("Student")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Student2")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("StudentId2")
                         .HasColumnType("int");
 
                     b.Property<string>("Video")

@@ -1,6 +1,7 @@
 ﻿@model kisko.Models.ProjectDTO; 
 @{
     ViewData["Title"] = "AddProject";
+    Layout = "_AdminLayout";
 }
 <h1 class="title_gestion_proyectos">
     <img src="https://image.flaticon.com/icons/png/512/2683/2683274.png" alt="">
@@ -17,18 +18,18 @@
 
             <div class="form-group">
                 <label for="description">Descripcion del proyecto</label>
-                <textarea class="form-control" name="description" id="description" asp-for="Description" cols="30" rows="10" maxlength="250"></textarea>
+                <textarea class="form-control" name="description" id="description" asp-for="Description" cols="30" rows="10" maxlength="250" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="gradegroup">Grado y Grupo</label>
-                <input class="form-control" type="text" name="gradegroup" id="gradegroup" asp-for="GradeGroup">
+                <input class="form-control" type="text" name="gradegroup" id="gradegroup" asp-for="GradeGroup" required>
             </div>
 
             <div class="form-group">
                 <label for="Student">Integrante #1</label>
 
-                <select class="form-select" name="StudentId" asp-for="StudentId" title="Selecciona el integrante">
+                <select class="form-select" name="StudentId" asp-for="StudentId" title="Selecciona el integrante" required>
                     <option selected></option>
                     @foreach (var item in ViewBag.Students)
                     {
@@ -41,7 +42,7 @@
             <div class="form-group">
                 <label for="SecondStudentId">Integrante #2</label>
 
-                <select class="form-select" name="SecondStudentId" asp-for="SecondStudentId" title="Selecciona el integrante">
+                <select class="form-select" name="SecondStudentId" asp-for="SecondStudentId" title="Selecciona el integrante" required>
                     <option selected></option>
                     @foreach (var item in ViewBag.Students)
                     {

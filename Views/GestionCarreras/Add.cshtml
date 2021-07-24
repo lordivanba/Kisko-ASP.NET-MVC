@@ -1,6 +1,7 @@
 ﻿@model kisko.Models.CareerDTO;
 @{
     ViewData["Title"] = "Add";
+    Layout = "_AdminLayout";
 }
 
 <section class="container_gestion_proyecto">
@@ -14,7 +15,7 @@
 
             <div class="form-group">
                 <label for="division">Division</label>
-                <select class="form-select" name="division" asp-for="Division">
+                <select class="form-select" name="division" asp-for="Division" required>
                     <option selected></option>
                     <option value="Tecnologías de la Información y Comunicación">Tecnologías de la Información y Comunicación</option>
                     <option value="Industrial">Industrial</option>

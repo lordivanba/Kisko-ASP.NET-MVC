@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "Gestiones";
+    Layout = "_AdminLayout";
+    int Id = (int)ViewBag.AdminId;
 }
 
 <h1 class="title_gestiones">GESTIONES</h1>
@@ -10,7 +12,7 @@
         <div>
             <h5 class="mt-0">Carreras</h5>
             <p>Parte administrativa de la pagina cuya función es administrar la información de las carreras en la UTM.</p>
-            <a asp-controller="GestionCarreras" asp-action="Index" id="btnGestionCarreras" class="btn btn-primary">Gestionar</a>
+            <a asp-controller="GestionCarreras" asp-action="Index" asp-route-id="@Id" id="btnGestionCarreras" class="btn btn-primary">Gestionar</a>
         </div>
     </div>
 
@@ -19,7 +21,7 @@
         <div>
             <h5 class="mt-0">Proyectos</h5>
             <p>Parte administrativa de la pagina cuya función es administrar la información de los proyectos en la UTM.</p>
-            <a asp-controller="GestionProyectos" asp-action="Index" id="btnGestionProyectos" class="btn btn-primary">Gestionar</a>
+            <a asp-controller="GestionProyectos" asp-action="Index" asp-route-id="@Id" id="btnGestionProyectos" class="btn btn-primary">Gestionar</a>
         </div>
     </div>
 
@@ -28,7 +30,7 @@
         <div>
             <h5 class="mt-0">Alumnos</h5>
             <p>Parte administrativa de la pagina cuya función es administrar la información de los alumnos en la UTM.</p>
-            <a asp-controller="GestionAlumnos" asp-action="Index" id="btnGestionProyectos" class="btn btn-primary">Gestionar</a>
+            <a asp-controller="GestionAlumnos" asp-action="Index" asp-route-id="@Id" id="btnGestionProyectos" class="btn btn-primary">Gestionar</a>
         </div>
     </div>
 </main>

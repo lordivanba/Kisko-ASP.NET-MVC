@@ -10,17 +10,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+
 namespace kisko.Controllers
 {
     public class GestionAlumnosController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
+        public int Id = 0;
         public GestionAlumnosController(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public IActionResult Index()
+        public IActionResult Index(int Id)
         {
+            if (Id == 0)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             var students = _dbContext.Students
                 .Select(student => new StudentDTO
                 {
@@ -29,6 +35,7 @@ namespace kisko.Controllers
                     Lastname = student.Lastname,
                     Email = student.Email
                 }).ToList();
+            ViewBag.AdminId = Id;
             return View(students);
         }
 
@@ -51,7 +58,7 @@ namespace kisko.Controllers
 
             _dbContext.Students.Add(student);
             _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Delete(int Id)
@@ -65,7 +72,7 @@ namespace kisko.Controllers
             _dbContext.Students.Remove(student);
             _dbContext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Edit(int Id)
@@ -101,7 +108,7 @@ namespace kisko.Controllers
             _dbContext.Students.Update(student);
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { Id = 1 });
         }
 
     }
