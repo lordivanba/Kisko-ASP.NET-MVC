@@ -21,6 +21,7 @@ namespace kisko.Controllers
         {
             _dbContext = dbContext;
         }
+
         public IActionResult Index(int Id)
         {
             if (Id == 0)
@@ -49,16 +50,21 @@ namespace kisko.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(StudentDTO dto)
         {
-            var student = new Student
-            {
-                Name = dto.Name,
-                Lastname = dto.Lastname,
-                Email = dto.Email
-            };
+            // var student = new Student
+            // {
+            //     Name = dto.Name,
+            //     Lastname = dto.Lastname,
+            //     Email = dto.Email
+            // };
 
-            _dbContext.Students.Add(student);
-            _dbContext.SaveChanges();
-            return RedirectToAction("Index", new { Id = 1 });
+            //  _dbContext.Students.Add(student);
+            //  _dbContext.SaveChanges();
+
+            var result = AddAlumno(dto);
+            if(result == false)
+                return NotFound();
+            else
+                return RedirectToAction("Index", new { Id = 1 });
         }
 
         public IActionResult Delete(int Id)
@@ -111,5 +117,31 @@ namespace kisko.Controllers
             return RedirectToAction("Index", new { Id = 1 });
         }
 
+        public bool AddAlumno(StudentDTO dto) {
+            bool isSaved = false;
+            try {
+                if (dto.Name == null && dto.Lastname == null && dto.Email == null)
+                {
+                    isSaved = false;
+                    return isSaved;
+                }
+                else 
+                {
+                    var student = new Student
+                    {
+                        Name = dto.Name,
+                        Lastname = dto.Lastname,
+                        Email = dto.Email
+                    };
+                    _dbContext.Students.Add(student);
+                    _dbContext.SaveChanges();
+                    isSaved = true;
+                }
+            } catch(Exception e) {
+                System.Console.WriteLine(e);
+                isSaved = false;
+            }
+            return isSaved;
+        }
     }
 }

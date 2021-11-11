@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Http;
-
+using System.Text.RegularExpressions;
 
 namespace kisko.Controllers
 {
@@ -24,6 +24,7 @@ namespace kisko.Controllers
             _dbContext = dbContext;
             _hosting = hostEnviroment;
         }
+
         public IActionResult Index(int Id)
         {
             if(Id == 0)
@@ -213,5 +214,54 @@ namespace kisko.Controllers
             file.CopyTo(new FileStream(filePath, FileMode.Create));
             return fileName;
         }
+
+        /*public bool RegistrarProyecto(ProjectDTO dto) 
+        {
+            bool error = false;
+            var project = new Project
+            {
+                Name = dto.Name,
+                Description = dto.Description,
+                GradeGroup = dto.GradeGroup,
+                Img = dto.Img,
+                Video = dto.Video,
+                StudentId = dto.StudentId,
+                Student = dto.Student,
+                SecondStudentId = dto.SecondStudentId,
+                SecondStudent = dto.SecondStudent,
+            };
+            try
+            {
+                _dbContext.Projects.Add(project);
+                _dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                error = true;
+            }
+
+            if (error == true)
+                return false;
+            else
+                return true;
+        }
+
+        public bool ValidarCamposProyecto(ProjectDTO dto) 
+        {
+            bool Name = false;
+            if (dto.Name != null && dto.Name.Contains("!@#$%^&*()_+{};:,.<>?")) 
+            {
+                Name = true;
+            }
+
+            if (Name == true)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }*/
     }
 }
