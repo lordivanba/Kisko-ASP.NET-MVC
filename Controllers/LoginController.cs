@@ -33,41 +33,45 @@ namespace kisko.Controllers
         {
             try
             {
-                /*
-                 using (_dbContext)
-                {
-                    var admin = (from d in _dbContext.Admins
-                                 where d.Email == dto.Email && d.Password == dto.Password
-                                 select d).FirstOrDefault();
-                    if (admin == null)
-                    {
-                        ViewBag.Error = "Correo o contraseña invalidas";
-                        return RedirectToAction("Index");
-                    }
-                }
-                 */
+                var result = LoginAsAdmin(dto);
 
-                var admin = _dbContext.Admins.
-                    Select(admin => new AdminDTO
-                {
-                    Id = admin.Id,
-                    Email = admin.Email,
-                    Password = admin.Password
-                }).Where(admins => admins.Email == dto.Email && admins.Password == dto.Password).FirstOrDefault();
-
-                if(admin == null)
-                {
-                    ViewBag.Error = "Correo o contraseña invalidas";
+                if(result == false)
                     return RedirectToAction("Index");
-                }
-
-                return RedirectToAction("Index", "Gestiones", new { Id = admin.Id});
+                else
+                    return RedirectToAction("Index", "Gestiones", new { Id = 1 });
             }
             catch (Exception e)
             {
                 ViewBag.Error = e.Message;
                 return View();
             }
+        }
+
+        public bool LoginAsAdmin(AdminDTO dto) 
+        {
+            bool userLogged;
+
+            //Si el objeto viene vacio, el usuario no inicia sesión
+            if (dto.Email == null && dto.Password == null)
+                return userLogged = false;
+
+            //Si existen los datos, los valida
+            var admin = _dbContext.Admins.
+                   Select(admin => new AdminDTO
+                   {
+                       Id = admin.Id,
+                       Email = admin.Email,
+                       Password = admin.Password
+                   }).Where(admins => admins.Email == dto.Email && admins.Password == dto.Password).FirstOrDefault();
+
+            //Si los datos no coinciden con un usuario administrador, el usuario no inicia sesión
+            //De modo contrario, el usuario si inicia sesión
+            if (admin == null)
+                return userLogged = false;
+            else
+                return userLogged = true;
+
+            return userLogged;
         }
     }
 }

@@ -45,24 +45,13 @@ namespace kisko.Controllers
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Add(StudentDTO dto)
         {
-            // var student = new Student
-            // {
-            //     Name = dto.Name,
-            //     Lastname = dto.Lastname,
-            //     Email = dto.Email
-            // };
-
-            //  _dbContext.Students.Add(student);
-            //  _dbContext.SaveChanges();
-
             var result = AddAlumno(dto);
             if(result == false)
-                return NotFound();
+                return BadRequest();
             else
                 return RedirectToAction("Index", new { Id = 1 });
         }
@@ -118,30 +107,32 @@ namespace kisko.Controllers
         }
 
         public bool AddAlumno(StudentDTO dto) {
-            bool isSaved = false;
-            try {
-                if (dto.Name == null && dto.Lastname == null && dto.Email == null)
-                {
-                    isSaved = false;
-                    return isSaved;
-                }
-                else 
-                {
-                    var student = new Student
-                    {
-                        Name = dto.Name,
-                        Lastname = dto.Lastname,
-                        Email = dto.Email
-                    };
-                    _dbContext.Students.Add(student);
-                    _dbContext.SaveChanges();
-                    isSaved = true;
-                }
-            } catch(Exception e) {
-                System.Console.WriteLine(e);
-                isSaved = false;
+            bool isSaved;
+
+            //Si los campos vienen vacios, retorna false y no se registra nada en la bd
+            if (dto.Name == null && dto.Lastname == null && dto.Email == null)
+                return isSaved = false;
+
+            //Si existen los datos se crea un nuevo alumno
+            var student = new Student
+            {
+                Name = dto.Name,
+                Lastname = dto.Lastname,
+                Email = dto.Email
+            };
+
+            //Realizamos el registro del nuevo alumno en la bd y regresamos true en caso de que no exista ninguna excepcion
+            try
+            {
+                _dbContext.Students.Add(student);
+                _dbContext.SaveChanges();
+                return isSaved = true;
             }
-            return isSaved;
+            catch (Exception e) //En caso de haber una excepcion regresamos false;
+            {
+                Console.WriteLine(e);
+                return isSaved = false;
+            }
         }
     }
 }
